@@ -1,3 +1,0 @@
-#Redirection vers website :
-RedirectMatch permanent /tristan/$ /tristan/www
-RedirectMatch permanent /tristan/application /tristan/www

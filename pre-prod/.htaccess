@@ -1,3 +1,0 @@
-#Redirection vers website :
-RedirectMatch permanent /pre-prod/$ /pre-prod/www
-RedirectMatch permanent /pre-prod/application /pre-prod/www

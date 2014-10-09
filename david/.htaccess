@@ -1,3 +1,0 @@
-#Redirection vers website :
-RedirectMatch permanent /david/$ /david/www
-RedirectMatch permanent /david/application /david/www
