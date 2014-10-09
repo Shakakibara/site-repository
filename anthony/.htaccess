@@ -1,0 +1,3 @@
+#Redirection vers website :
+RedirectMatch permanent /anthony/$ /anthony/www
+RedirectMatch permanent /anthony/application /anthony/www
