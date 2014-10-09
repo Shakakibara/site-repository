@@ -1,0 +1,3 @@
+#Redirection vers website :
+RedirectMatch permanent /mamad/$ /mamad/www
+RedirectMatch permanent /mamad/application /mamad/www
