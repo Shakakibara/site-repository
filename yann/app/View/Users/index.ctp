@@ -3,12 +3,16 @@
 <?php
 
 	echo "<tr>";
-		foreach ($users['0']['User'] as $column=>$value){
-			echo '<th>';
-			if($column != 'password')
-				echo($column);
-			echo '</th>';
+		if(isset($users['0']['User']))
+			foreach ($users['0']['User'] as $column=>$value){
+				echo '<th>';
+				if($column != 'password')
+					echo($column);
+				echo '</th>';
+		}else{
+			echo "<h3>Il n'y a aucun utilisateur dans la base</h3>";
 		}
+
 	echo "</tr>";
 	foreach($users as $user){
 		echo "<tr>";

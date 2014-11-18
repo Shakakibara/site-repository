@@ -2757,3 +2757,107 @@ Stack Trace:
 #3 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2014-11-16 23:32:37 Error: [PDOException] SQLSTATE[23505]: Unique violation: 7 ERREUR:  la valeur d'une clé dupliquée rompt la contrainte unique « ak_pseudo_users »
+DETAIL:  La clé « (pseudo)=(sfqgrzqg) » existe déjà.
+Request URL: /MyProjects/Projet/Projet_Local/ProjetPeche/Users/add
+Stack Trace:
+#0 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO "pu...')
+#3 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Model.php(1854): DboSource->create(Object(User), Array, Array)
+#4 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\Controller\UsersController.php(26): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-11-16 23:35:51 Error: [PDOException] SQLSTATE[23505]: Unique violation: 7 ERREUR:  la valeur d'une clé dupliquée rompt la contrainte unique « ak_pseudo_users »
+DETAIL:  La clé « (pseudo)=(pseudotest) » existe déjà.
+Request URL: /MyProjects/Projet/Projet_Local/ProjetPeche/Users/add
+Stack Trace:
+#0 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO "pu...')
+#3 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Model.php(1854): DboSource->create(Object(User), Array, Array)
+#4 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\Controller\UsersController.php(26): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-11-17 00:34:22 Error: Fatal Error (4): syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\Model\User.php, line 172]
+2014-11-17 00:34:22 Error: [FatalErrorException] syntax error, unexpected ''required'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /MyProjects/Projet/Projet_Local/ProjetPeche/Users/add
+Stack Trace:
+#0 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\Bitnami\\wapp...', 172)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\Bitnami\\wapp...', 172, Array)
+#2 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\Bitnami\\wapp...', 172, Array)
+#3 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-11-17 23:31:17 Error: [PDOException] SQLSTATE[23505]: Unique violation: 7 ERREUR:  la valeur d'une clé dupliquée rompt la contrainte unique « ak_pseudo_users »
+DETAIL:  La clé « (pseudo)=(pseudorandom) » existe déjà.
+Request URL: /MyProjects/Projet/Projet_Local/ProjetPeche/Users/add
+Stack Trace:
+#0 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO "pu...')
+#3 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Model.php(1854): DboSource->create(Object(User), Array, Array)
+#4 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\Controller\UsersController.php(26): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-11-17 23:38:49 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERREUR:  une valeur NULL viole la contrainte NOT NULL de la colonne « birth »
+DETAIL:  La ligne en échec contient (51, 1, 3, tristan.t@etu.uvoie.fr, efzGQ5GH, password, DIALLO, Mamadou, null, 9 rue de l arc en ciel, 74940, Annecy-Le-Vieux, 5, 2014-11-18)
+Request URL: /MyProjects/Projet/Projet_Local/ProjetPeche/Users/add
+Stack Trace:
+#0 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO "pu...')
+#3 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Model.php(1854): DboSource->create(Object(User), Array, Array)
+#4 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\Controller\UsersController.php(32): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-11-17 23:39:15 Error: [PDOException] SQLSTATE[23502]: Not null violation: 7 ERREUR:  une valeur NULL viole la contrainte NOT NULL de la colonne « birth »
+DETAIL:  La ligne en échec contient (52, 1, 3, tristan.t@etu.uvoie.fr, efzGQ5GH, password, DIALLO, Mamadou, null, 9 rue de l arc en ciel, 74940, Annecy-Le-Vieux, 5, 2014-11-18)
+Request URL: /MyProjects/Projet/Projet_Local/ProjetPeche/Users/add
+Stack Trace:
+#0 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO "pu...', Array)
+#2 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Datasource\DboSource.php(1012): DboSource->execute('INSERT INTO "pu...')
+#3 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Model\Model.php(1854): DboSource->create(Object(User), Array, Array)
+#4 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\Controller\UsersController.php(32): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#8 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-11-17 23:44:17 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\View\Users\add.ctp, line 18]
+2014-11-17 23:44:17 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /MyProjects/Projet/Projet_Local/ProjetPeche/Users/add
+Stack Trace:
+#0 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\Bitnami\\wapp...', 18)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\Bitnami\\wapp...', 18, Array)
+#2 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\Bitnami\\wapp...', 18, Array)
+#3 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-11-17 23:48:31 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /MyProjects/Projet/Projet_Local/ProjetPeche/User
+Stack Trace:
+#0 C:\Bitnami\wappstack-5.4.33-0\apache2\htdocs\MyProjects\Projet\Projet_Local\ProjetPeche\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

@@ -5,157 +5,158 @@ class User extends AppModel {
 
 	    public $validate = array(
 	    'civility_id' => array(
-	    	'required' => true,
-	    	'allowEmpty' => false,
-	    	'notEmpty' => array(
-	            'rule' => 'notEmpty',
-	            'message' => 'Veuillez renseigner votre civilité !',
-	            
-	        ),
+            'rule' => 'notEmpty',
+            'message' => 'Veuillez renseigner votre civilité !', 
+	        'allowEmpty' => false,
+	        'required' => true
 	    ),
         'pseudo' => array(
-            'regex' => array(
-                'rule'     => '/^[a-zA-Z\-_0-9]+$/',
-                'message'  => 'Chiffres et lettres uniquement !'
-            ),
-            'between' => array(
-                'rule'    => array('between', 3, 15),
-                'message' => 'Pseudo entre 3 et 15 caractères !',
-        	),
-        	'notEmpty' => array(
+            'pseudo-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez renseigner votre pseudo !',
 	            
 	        ),
-     		'required' => true,        
+	        'pseudo-rule-2' => array(
+                'rule'     => '/^[a-zA-Z\-_0-9]+$/',
+                'message'  => 'Chiffres et lettres uniquement !',
+                
+            ),
+            'pseudo-rule-3' => array(
+                'rule'    => array('between', 3, 15),
+                'message' => 'Pseudo entre 3 et 15 caractères !',
+                
+        	),  
+        	'pseudo-rule-3' => array(
+	            'rule' => 'isUnique',
+	            'message' => 'Pseudo déjà utilisé !',
+	            
+	        ), 
         ),
         'mail' => array(
-	        'validEmailRule' => array(
-	            'rule' => 'email',
-	            'message' => 'Addresse Email invalide !',
-	            'required' => true
-	        ),
-	        'uniqueEmailRule' => array(
-	            'rule' => 'isUnique',
-	            'message' => 'Adresse Email déjà utilisé !',
-	            'required' => true,
-	        ),
-	        'notEmpty' => array(
+	        'mail-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez renseigner votre Adresse Email !',
 	            
 	        ),
-        	'allowEmpty' => false
+	        'mail-rule-2' => array(
+	            'rule' => 'email',
+	            'message' => 'Addresse Email invalide !',
+	            
+	        ),
+	        'mail-rule-3' => array(
+	            'rule' => 'isUnique',
+	            'message' => 'Adresse Email déjà utilisé !',
+	            
+	        ),
 	    ),
 	    'password' => array(
-	    	'notEmpty' => array(
+	    	'password-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez renseigner votre mot de passe !',
-	            'required' => true
+	            
 	        ),
-	        'between' => array(
+	        'password-rule-2' => array(
                 'rule'    => array('between', 6, 50),
                 'message' => 'Mot de passe entre 6 et 50 caractères',
-                'required' => true,
-            )
-
-	    ),
+                
+            ),
+        ),
 	    'repassword' => array(
-	    	'notEmpty' => array(
+	    	'repassword-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez confirmer votre mot de passe !',
 	            
 	        ),
-	    	'equaltofield' => array(
-            'rule' => array('equaltofield','password'),
-            'message' => 'Le mot de passe et la confirmation du mot de passe doivent être identiques !',
-			'on' => 'create', // Limit validation to 'create' or 'update' operations
-            )
+	    	'repassword-rule-2' => array(
+	            'rule' => array('equaltofield','password'),
+	            'message' => 'Le mot de passe et la confirmation du mot de passe doivent être identiques !',
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
+				
+            ),
         ),
 	    'lastname' => array(
-	    	'between' => array(
-                'rule'    => array('between', 3, 30),
-                'message' => 'Nom entre 3 et 30 caractères',
-            ),
-            'path' => array(
-                'rule'     => '/^[a-zA-Z\-\s]+$/',
-                'message'  => 'Lettres uniquement !'
-            ),
-            'notEmpty' => array(
+	    	'lastname-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez renseigner votre nom !',
 	            
 	        ),
-	        'required' => true
-	    ),
-	    'firstname' => array(
-	    	'between' => array(
-                'rule'    => array('between', 3, 30),
-                'message' => 'Prénom entre 3 et 30 caractères',
-            ),
-            'path' => array(
+	        'lastname-rule-2' => array(
                 'rule'     => '/^[a-zA-Z\-\s]+$/',
-                'message'  => 'Lettres uniquement !'
+                'message'  => 'Lettres uniquement !',
+                
             ),
-            'notEmpty' => array(
+	        'lastname-rule-3' => array(
+                'rule'    => array('between', 3, 30),
+                'message' => 'Nom entre 3 et 30 caractères',
+                
+            ),
+        ),
+	    'firstname' => array(
+	    	'firstname-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez renseigner votre prénom !',
 	            
 	        ),
-	        'required' => true
-	    ),
+	        'firstname-rule-2' => array(
+                'rule'     => '/^[a-zA-Z\-\s]+$/',
+                'message'  => 'Lettres uniquement !',
+                
+            ),
+	        'firstname-rule-3' => array(
+                'rule'    => array('between', 3, 30),
+                'message' => 'Prénom entre 3 et 30 caractères',
+                
+            ),
+        ),
         'street' => array(
-        	'notEmpty' => array(
+        	'street-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez renseigner votre rue !',
 	            
 	        ),
-            'alphaNumeric' => array(
-                'rule'     => '/^[a-zA-Z\-\s0-9]+$/',
-                'message'  => 'Chiffres et lettres uniquement !'
+            'street-rule-2' => array(
+                'rule'     => '/^[a-zA-Z\-\s0-9\']+$/',
+                'message'  => 'Chiffres et lettres uniquement !',
+                
             ),
-            'between' => array(
+            'street-rule-3' => array(
                 'rule'    => array('between', 3, 50),
                 'message' => 'Rue entre 3 et 50 caractères',
+                
         	),
-     		'required' => true,        
-        ),
+     	),
         'zipcode' => array(
-        	'notEmpty' => array(
+        	'zipcode-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez renseigner votre code postal !',
 	            
 	        ),
-            'numeric' => array(
+            'zipcode-rule-2' => array(
                 'rule'     => '/^[0-9]{5}$/',
-                'message'  => '5 Chiffres uniquement !'
+                'message'  => '5 Chiffres uniquement !',
+                
             ),
-     		'required' => true, 
-    	),
+     	),
     	'city' => array(
-	    	'between' => array(
-                'rule'    => array('between', 3, 30),
-                'message' => 'Ville entre 3 et 30 caractères',
-            ),
-            'path' => array(
-                'rule'     => '/^[a-zA-Z\-\s]+$/',
-                'message'  => 'Lettres uniquement !'
-            ),
-            'notEmpty' => array(
+	    	'city-rule-1' => array(
 	            'rule' => 'notEmpty',
 	            'message' => 'Veuillez renseigner votre ville !',
 	            
 	        ),
-	        'required' => true
+	        'city-rule-2' => array(
+                'rule'     => '/^[a-zA-Z\-\s]+$/',
+                'message'  => 'Lettres uniquement !',
+                
+            ),
+	        'city-rule-3' => array(
+                'rule'    => array('between', 3, 30),
+                'message' => 'Ville entre 3 et 30 caractères',
+       		),   
 	    ),
-	    'birth' => array(
-	    	'required' => true,
-	    )
-
 
     );
 
-function equaltofield($check,$otherfield)
+	public function equaltofield($check,$otherfield)
     {
         //get name of field
         $fname = '';

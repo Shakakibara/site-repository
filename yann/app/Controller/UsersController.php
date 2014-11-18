@@ -19,10 +19,21 @@ class UsersController extends AppController {
     public function add() {
         if ($this->request->is('Post')) {
             $this->User->create();
+            
+            foreach ($this->request->data["User"] as $k=>$v){
+                if($k != 'birth'){
+                    $this->request->data["User"][$k] = ltrim($this->request->data["User"][$k]);
+                    $this->request->data["User"][$k] = rtrim($this->request->data["User"][$k]);
+                }
+            }
+            $this->request->data["User"]["lastname"] = strtoupper($this->request->data["User"]["lastname"]);
+            $this->request->data["User"]["firstname"] = strtolower($this->request->data["User"]["firstname"]); $this->request->data["User"]["firstname"][0] = strtoupper($this->request->data["User"]["firstname"][0]);
+            $this->request->data["User"]["mail"] = strtolower($this->request->data["User"]["mail"]);
+
 
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('Your account has been saved.'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect(array('controller'=>'Users' ,'action' => 'index'));
             }
             $this->Session->setFlash(__('Unable to add your account.'));
         }
