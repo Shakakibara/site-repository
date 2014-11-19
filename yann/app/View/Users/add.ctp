@@ -1,17 +1,18 @@
+<div class=''>
+
 <?php
 
-$options = $option;
 
+//Reccupere les données de Civility
+$options = $option; 
+//Creer le formulaire d'inscription
 echo $this->Form->create('User');
-
 echo $this->Form->input('civility_id', array(
       'options' => $options,
       
       'empty' => '(choisissez)',
       'label' => 'Civilité'
   ));
-
-
 echo $this->Form->input('mail' , array('label' => 'Email'));
 echo $this->Form->input('pseudo', array('label' => 'Pseudo'));
 echo $this->Form->input('password', array('label' => 'Mot de passe'));
@@ -23,3 +24,8 @@ echo $this->Form->input('street', array('label' => 'Rue'));
 echo $this->Form->input('zipcode', array('label' => 'Code Postal'));
 echo $this->Form->input('city', array('label' => 'Ville'));
 echo $this->Form->end('Save');
+
+
+?>
+
+</div>

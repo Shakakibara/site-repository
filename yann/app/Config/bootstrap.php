@@ -109,3 +109,6 @@ CakeLog::config('error', array(
 CakePlugin::load('DebugKit');
 
 
+setlocale(LC_ALL, 'fra');
+
+

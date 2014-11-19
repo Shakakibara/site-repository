@@ -5,10 +5,13 @@
 	echo "<tr>";
 		if(isset($users['0']['User']))
 			foreach ($users['0']['User'] as $column=>$value){
-				echo '<th>';
-				if($column != 'password')
+				
+				if($column != 'password'){
+					echo '<th>';
 					echo($column);
-				echo '</th>';
+					echo '</th>';
+				}
+					
 		}else{
 			echo "<h3>Il n'y a aucun utilisateur dans la base</h3>";
 		}
@@ -17,10 +20,13 @@
 	foreach($users as $user){
 		echo "<tr>";
 			foreach ($user['User'] as $column=>$value){
-				echo '<td>';
-				if($column != 'password')
+				
+				if($column != 'password'){
+					echo '<td>';
 					echo($value);
-				echo '</td>';
+					echo '</td>';
+				}
+					
 			}
 		echo "</tr>";
 	}
