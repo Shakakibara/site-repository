@@ -1,10 +1,7 @@
 
 <?php
 
-App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
-
 class User extends AppModel {
-		
 
 	    public $validate = array(
 	    'civility_id' => array(
@@ -168,18 +165,6 @@ class User extends AppModel {
             break;
         }
         return $this->data[$this->name][$otherfield] === $this->data[$this->name][$fname];
-    } 
-
-
-    //hashage du mot de passe
-   public function beforeSave($options = array()) {
-        if (isset($this->data[$this->alias]['password'])) {
-            $passwordHasher = new SimplePasswordHasher();
-            $this->data[$this->alias]['password'] = $passwordHasher->hash(
-                $this->data[$this->alias]['password']
-            );
-        }
-        return true;
     } 
 
 
