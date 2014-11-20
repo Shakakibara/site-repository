@@ -1,3 +1,5 @@
+
+
 <div>
 
 <h2>Home Users</h2>
@@ -6,15 +8,16 @@
 
 <!-- On affiche tous les utilisateurs dans une table (debug) -->
 <?php
-
+	
 	//Si pas d'utilisateurs dans la base de donnée, on passe sur le else sans afficher les colonnes
-	if(isset($users['0']['User'])){?>
-
+	if(isset($users['0']['User'])){
+		?>
 		<table>
 			<?php
 			//Première ligne contenant les titres des colonnes
 			echo "<tr>";
 			foreach ($users['0']['User'] as $column=>$value){
+				
 				if($column != 'password'){
 					echo '<th>';
 					echo($column);
@@ -56,6 +59,6 @@
 	);
 
 
-?>
+	?>
 
 </div>

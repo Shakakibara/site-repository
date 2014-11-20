@@ -12,9 +12,10 @@ class UsersController extends AppController {
 
 
     public function index() {
-
-        $this->set('users', $this->User->find('all'));
-
+        $users = $this->User->find('all');
+        
+        $this->set('users', $users);
+        
     }
     public function add() {
 
@@ -30,15 +31,16 @@ class UsersController extends AppController {
                     $this->request->data["User"][$k] = rtrim($this->request->data["User"][$k]);
                 }
             }
-            //Ici on modifie la casse de Nom/Prenom/Email/Ville 
+            //Ici on modifie la casse de Nom/Prenom/Email/Ville/Rue 
             $this->request->data["User"]["lastname"] = AppController::titleCase($this->request->data["User"]["lastname"]);
             $this->request->data["User"]["firstname"] = AppController::ucname($this->request->data["User"]["firstname"]);
             $this->request->data["User"]["mail"] = AppController::lowerCase($this->request->data["User"]["mail"]);
             $this->request->data["User"]["city"] = AppController::ucname($this->request->data["User"]["city"]); 
+            $this->request->data["User"]["street"] = AppController::lowerCase($this->request->data["User"]["street"]);
 
 
             //Crypte le mot de passe
-            if(User::beforeSave()){
+            
                 //Le if sauvgarde les données si elles ont été envoyées et validées
                 if ($this->User->save($this->request->data)) {
                     //Affiche un message de confirmation
@@ -51,15 +53,13 @@ class UsersController extends AppController {
             }else{
                 $this->Session->setFlash(__('Unable to hash the password.'));
             }
-        }
+        
         
         
        
         //Envoi de la table Civilities dans la Vue Users//////////////////////////////////////
-        $this->loadModel('Civility');                                                       //                   
-        $civilities = $this->Civility->find('all');                                         //
-        $value = array();                                                                   //
-        $option = array();                                                                  //
+                                                                                            //                   
+        $civilities = $this->User->Civility->find('all');                                   //                                                               //
         foreach($civilities as $civility){                                                  //
                                                                                             //
                 $tCivilities[$civility['Civility']['id']]=$civility['Civility']['label'];   //

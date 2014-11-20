@@ -6,6 +6,12 @@ App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 
 
 class User extends AppModel {
+
+		public $belongsTo = array(
+			'Usercategorie',
+			'Civility'
+			);
+
 		
 
 		public $name = 'User';
@@ -20,7 +26,7 @@ class User extends AppModel {
         'username' => array(
             'username-rule-1' => array(
 	            'rule' => 'notEmpty',
-	            'message' => 'Veuillez renseigner votre nom d\utilisateur !',
+	            'message' => 'Veuillez renseigner votre nom d\'utilisateur !',
 	            
 	        ),
 	        'username-rule-2' => array(
@@ -35,7 +41,7 @@ class User extends AppModel {
         	),  
         	'username-rule-3' => array(
 	            'rule' => 'isUnique',
-	            'message' => 'Nom d\utilisateur déjà utilisé !',
+	            'message' => 'Nom d\'utilisateur déjà utilisé !',
 	            
 	        ), 
         ),
@@ -56,6 +62,19 @@ class User extends AppModel {
 	            
 	        ),
 	    ),
+	    'remail' => array(
+	    	'remail-rule-1' => array(
+	            'rule' => 'notEmpty',
+	            'message' => 'Veuillez confirmer votre mail !',
+	            
+	        ),
+	    	'remail-rule-2' => array(
+	            'rule' => array('equaltofield','mail'),
+	            'message' => 'Le mail et la confirmation du mail doivent être identiques !',
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
+				
+            ),
+        ),
 	    'password' => array(
 	    	'password-rule-1' => array(
 	            'rule' => 'notEmpty',

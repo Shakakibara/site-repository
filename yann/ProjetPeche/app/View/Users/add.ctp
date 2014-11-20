@@ -14,6 +14,7 @@ echo $this->Form->input('civility_id', array(
       'label' => 'Civilité'
   ));
 echo $this->Form->input('mail' , array('label' => 'Email'));
+echo $this->Form->input('remail', array('label' => 'Confirmation d\'Email'));
 echo $this->Form->input('username', array('label' => 'Nom d\'utilisateur'));
 echo $this->Form->input('password', array('label' => 'Mot de passe'));
 echo $this->Form->input('repassword', array('type' => 'password', 'label' => 'Confirmation Mot de passe'));
