@@ -36,7 +36,7 @@ if (!defined('DS')) {
  *
  */
 if (!defined('ROOT')) {
-	define('ROOT', dirname(dirname(__FILE__)));
+	define('ROOT', dirname(dirname(dirname(__FILE__))));
 }
 
 /**
@@ -44,7 +44,7 @@ if (!defined('ROOT')) {
  *
  */
 if (!defined('APP_DIR')) {
-	define('APP_DIR', 'application');
+	define('APP_DIR', basename(dirname(dirname(__FILE__))));
 }
 
 /**
@@ -61,8 +61,7 @@ if (!defined('APP_DIR')) {
  * The following line differs from its sibling
  * /lib/Cake/Console/Templates/skel/webroot/index.php
  */
-define('CAKE_VERSION', '2.5.5');
-define('CAKE_CORE_INCLUDE_PATH', DS . 'home' . DS . 'pechealpes' . DS . 'lib' . DS . 'CakePHP'. DS . CAKE_VERSION);
+//define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'lib');
 
 /**
  * Editing below this line should NOT be necessary.
