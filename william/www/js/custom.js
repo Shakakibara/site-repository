@@ -34,9 +34,36 @@ jQuery(document).ready(function() {
 		$(pageId).animate({opacity: 0.01}, 500);
 		$(this).attr('activated', 'inactive');
 	}
+
+
+		
+
+		
 		
 
 	});
+	//----------------------Getion des pages Ajax
+	$(".ajax").on('click',function(event) {
+		$('#inscription').modal('toggle');
+		$("body").css('overflow', 'hidden');
+
+		var linkAjax = $(this).attr('href');
+		var content_place = $(this).attr('data-target')+"-content";
+			$.get(linkAjax, function(data) {
+
+		$(content_place).append(data);
+			
+		});
+		return false;
+	});
+
+	$('#inscription').on('hidden.bs.modal', function () {
+		$("body").css('overflow', 'visible');
+    
+})
+	
+
+	
 });
 
 $(window).scroll(function() {

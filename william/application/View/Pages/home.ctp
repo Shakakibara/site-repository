@@ -1,3 +1,37 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li >
+                        <a class="page-scroll" href="#page-top">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Le site à venir</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Nous contacter</a>
+                    </li>
+                    <li>
+                        <a href="#">Connexion</a>
+                    </li>
+                    <li>
+                        <?= $this->Html->link('Inscription',array('controller'=>'users','action'=>'add'),array('class'=>'ajax','ajax-modal'=>'inscription',"data-toggle"=>"modal", "data-target"=>"#inscription"));?>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        <div id="inscription" class="modal fade" tabindex="1000" role="dialog" aria-labelledby="inscriptionLabel" aria-hidden="true">
+          <div class="modal-body" id="inscription-content">
+            
+          </div>
+        </div>
 <!-- Intro Header -->
     <header class="intro">
         <div class="intro-body">

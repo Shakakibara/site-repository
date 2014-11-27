@@ -51,29 +51,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     <div id="preloader">
         <div id="status"></div>
     </div>
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li >
-                        <a class="page-scroll" href="#page-top">Accueil</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Le site à venir</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Nous contacter</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    
     
     <?=  $this->Session->flash();?>
     <?= $this->fetch('content');?>
